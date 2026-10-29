@@ -1,0 +1,23 @@
+# Wasmer package for the portfolio. build.sh copies this next to the built app,
+# so "." below is the build folder (the app with vendor/ and public/build/).
+[package]
+description = "Raza Sandhu portfolio (Laravel)"
+private = true
+entrypoint = "run"
+
+[dependencies]
+"php/php" = "=8.3.403"
+
+[fs]
+"/app" = "."
+"/config" = "php-config"
+
+# The website: PHP's built-in server on port 8080, routed through Laravel.
+[[command]]
+name = "run"
+module = "php/php:php"
+runner = "wasi"
+
+[command.annotations.wasi]
+main-args = ["-S", "0.0.0.0:8080", "-t", "/app/public", "/app/router.php"]
+env = ["PHPRC=/config/"]

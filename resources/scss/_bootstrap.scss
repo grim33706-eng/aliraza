@@ -1,0 +1,32 @@
+// Bootstrap 5 — only the layout layer (reboot, grid, utilities, helpers).
+// Components are custom, so their CSS isn't shipped.
+@import "bootstrap/scss/functions";
+
+$enable-dark-mode: false;
+$grid-gutter-width: 1.75rem;
+$container-padding-x: 2.5rem;
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1160px,
+    xxl: 1260px,
+);
+$spacer: 1rem;
+$font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$link-decoration: none;
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// Only ship the utility classes the views actually use.
+$utilities: map-get-multiple($utilities, ("display", "order", "align-items", "justify-content", "margin-top", "margin-bottom", "text-align", "gap"));
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";

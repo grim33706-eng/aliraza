@@ -1,0 +1,39 @@
+kind: wasmer.io/App.v0
+name: raza-sandhu-portfolio
+package: .
+
+# Non-secret settings. Secrets (APP_KEY, MAIL_USERNAME, MAIL_PASSWORD, ...) are
+# added with `wasmer app secrets create` — see README → "Deploying to Wasmer Edge".
+env:
+  APP_NAME: Raza Sandhu
+  APP_ENV: production
+  APP_DEBUG: "false"
+  APP_URL: https://raza-sandhu-portfolio.wasmer.app
+  LOG_CHANNEL: stderr
+  LOG_LEVEL: warning
+  # Wasmer provides DB_HOST, DB_PORT, DB_NAME, DB_USERNAME and DB_PASSWORD.
+  DB_CONNECTION: mysql
+  # The free plan has no SSH, so the app runs its own migrations (and creates
+  # the admin from the ADMIN_PASSWORD secret) on the first visit after a deploy.
+  AUTO_MIGRATE: "true"
+  SESSION_DRIVER: database
+  SESSION_SECURE_COOKIE: "true"
+  CACHE_STORE: database
+  QUEUE_CONNECTION: sync
+  # The app's own files are read-only; Laravel's storage/ (uploads, compiled
+  # views) lives on the volume below so it survives restarts and redeploys.
+  LARAVEL_STORAGE_PATH: /data/storage
+  MAIL_MAILER: smtp
+  MAIL_HOST: smtp.gmail.com
+  MAIL_PORT: "587"
+  MAIL_FROM_NAME: Raza Sandhu
+  CONTACT_INBOX: mr.razasandhu@gmail.com
+
+# Persistent storage. Don't rename it: a new name means a new, empty volume.
+volumes:
+  - name: storage
+    mount: /data
+
+capabilities:
+  database:
+    engine: mysql

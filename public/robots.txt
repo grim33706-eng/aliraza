@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+# Add your live domain once deployed, e.g.:
+# Sitemap: https://your-domain.com/sitemap.xml
