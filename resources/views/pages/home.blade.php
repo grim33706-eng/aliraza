@@ -80,7 +80,7 @@
                         <span class="orbit-ring orbit-ring--a" aria-hidden="true"><i></i></span>
                         <span class="orbit-ring orbit-ring--b" aria-hidden="true"><i></i></span>
                         <figure class="portrait">
-                            <img src="{{ asset($profile['photo']) }}" alt="Portrait of {{ $profile['name'] }}" width="400" height="400" loading="lazy" decoding="async">
+                            <img src="{{ asset($profile['photo']) }}" alt="Portrait of {{ $profile['name'] }}, Meta Ads &amp; Google Ads expert and performance marketer" width="400" height="400" loading="lazy" decoding="async">
                         </figure>
                         @foreach (array_slice($p['about']['chips'], 0, 3) as $chip)
                             <span class="float-chip float-chip--{{ $loop->iteration }}" aria-hidden="true"><x-icon :name="$chip['icon']" :size="16" /> {{ $chip['label'] }}</span>

@@ -43,6 +43,17 @@ return [
         ],
     ],
 
+    // Search engines: other names people search for, and the site-wide keywords.
+    'seo' => [
+        'alternate_names' => ['Ali Raza Sandhu', 'Raza'],
+        'job_titles' => ['Meta Ads Expert', 'Google Ads Expert', 'Performance Marketer', 'Social Media Manager'],
+        'keywords' => [
+            'Ali Raza Sandhu Meta ad expert', 'Ali Raza Sandhu Google ad expert', 'Raza Sandhu Meta ad expert', 'Raza Sandhu Google ad expert',
+            'Ali Raza Sandhu performance marketer', 'Raza Sandhu performance marketer', 'Raza performance marketer', 'Raza ad expert',
+            'Raza Meta ad expert', 'Raza Google ad expert', 'Ad expert', 'Ad performance marketer', 'Google Ads expert', 'Meta Ads expert',
+        ],
+    ],
+
     'contact' => [
         'email' => 'mr.razasandhu@gmail.com',
         'phone_display' => '+92 326 9083551',
@@ -563,11 +574,11 @@ return [
     'pages' => [
 
         'home' => [
-            'seo' => ['title' => '', 'description' => ''],
+            'seo' => ['title' => 'Ali Raza Sandhu — Meta Ads & Google Ads Expert | Performance Marketer', 'description' => 'Ali Raza Sandhu (Raza Sandhu) is a Meta Ads expert, Google Ads expert and performance marketer in Lahore, running lead-generating ad campaigns in 7 countries.'],
             'hero' => [
                 'eyebrow' => 'Available for new projects · Lahore, Pakistan',
                 'title' => 'Content that builds brands. Campaigns that bring *leads.*',
-                'lead' => 'I\'m **Raza Sandhu**, a Social Media Manager and Performance Marketing Specialist. I run brand social accounts and paid campaigns on Meta, Google and TikTok for businesses in seven countries.',
+                'lead' => 'I\'m **Ali Raza Sandhu**, a Meta Ads and Google Ads expert and performance marketer. I run brand social accounts and paid campaigns on Meta, Google and TikTok for businesses in seven countries.',
                 'primary_label' => 'View my work',
                 'secondary_label' => 'Let\'s talk',
                 'platforms' => [
@@ -624,7 +635,7 @@ return [
         ],
 
         'about' => [
-            'seo' => ['title' => 'About', 'description' => 'About Raza Sandhu — Social Media Manager and Performance Marketing Specialist in Lahore. Career journey, expertise, skills and education.'],
+            'seo' => ['title' => 'About Ali Raza Sandhu — Performance Marketer & Ad Expert', 'description' => 'About Ali Raza Sandhu, a performance marketer and Meta & Google Ads expert in Lahore: career journey, ad and social media skills, tools and education.'],
             'hero' => [
                 'eyebrow' => 'About',
                 'title' => 'The person behind the content calendar *and the ad account.*',
@@ -666,7 +677,7 @@ return [
         ],
 
         'services' => [
-            'seo' => ['title' => 'Services', 'description' => 'Social media management, content calendars, AI-assisted content, Meta Ads, Google Ads, TikTok Ads, lead generation, A/B testing and reporting by Raza Sandhu.'],
+            'seo' => ['title' => 'Meta Ads & Google Ads Expert Services', 'description' => 'Hire Raza Sandhu, a Meta Ads and Google Ads expert: campaign setup, lead generation, TikTok Ads, A/B testing, reporting and social media management.'],
             'hero' => [
                 'eyebrow' => 'Services',
                 'title' => 'Everything your brand needs to grow on social — *and to get paid for it.*',
@@ -689,7 +700,7 @@ return [
         ],
 
         'portfolio' => [
-            'seo' => ['title' => 'Portfolio', 'description' => 'Portfolio of Raza Sandhu: real Meta Ads Manager dashboards, screen recordings and social media and paid campaign work across lead generation, content and paid media.'],
+            'seo' => ['title' => 'Meta Ads Portfolio — Real Ad Campaigns', 'description' => 'Portfolio of Raza Sandhu, Meta ad expert and performance marketer: real Ads Manager dashboards, screen recordings and lead-generation campaigns.'],
             'hero' => [
                 'eyebrow' => 'Portfolio',
                 'title' => 'Work samples, *straight from the accounts.*',
@@ -709,7 +720,7 @@ return [
         ],
 
         'results' => [
-            'seo' => ['title' => 'Results', 'description' => 'Measured results from Raza Sandhu\'s Meta Ads campaigns — reach, impressions, CTR, CPC, form leads and messaging conversations, read directly from Ads Manager.'],
+            'seo' => ['title' => 'Ad Campaign Results — Performance Marketing', 'description' => 'Results from Raza Sandhu\'s Meta Ads campaigns as a performance marketer: reach, CTR, CPC, form leads and messaging conversations, straight from Ads Manager.'],
             'hero' => [
                 'eyebrow' => 'Results & achievements',
                 'title' => 'Results measured in reach, *clicks and leads.*',
@@ -741,7 +752,7 @@ return [
         ],
 
         'international' => [
-            'seo' => ['title' => 'International Experience', 'description' => 'Raza Sandhu\'s international marketing experience: Meta, TikTok and Google campaigns for businesses in Pakistan, Saudi Arabia, the UAE, Oman, Bangladesh, France and the United Kingdom.'],
+            'seo' => ['title' => 'International Meta & Google Ads Campaigns', 'description' => 'Raza Sandhu runs Meta, Google and TikTok ad campaigns for businesses in Pakistan, Saudi Arabia, the UAE, Oman, Bangladesh, France and the UK.'],
             'hero' => [
                 'eyebrow' => 'International experience',
                 'title' => 'One desk in Lahore. *Campaigns in seven countries.*',
@@ -764,7 +775,7 @@ return [
         ],
 
         'contact' => [
-            'seo' => ['title' => 'Contact', 'description' => 'Contact Raza Sandhu about social media management, Meta Ads, Google Ads, TikTok Ads or lead generation. Based in Lahore, Pakistan.'],
+            'seo' => ['title' => 'Contact — Hire a Meta & Google Ads Expert', 'description' => 'Contact Ali Raza Sandhu, Meta Ads expert, Google Ads expert and performance marketer in Lahore, about ad campaigns, lead generation or social media.'],
             'hero' => [
                 'eyebrow' => 'Contact',
                 'title' => 'Let\'s grow something *together.*',
@@ -794,7 +805,7 @@ return [
                 'secondary_label' => 'WhatsApp',
             ],
             'meta' => [
-                'tagline' => 'Social Media Manager & Performance Marketing Specialist. Based in Lahore, Punjab, Pakistan, working with brands across South Asia, the Gulf and Europe.',
+                'tagline' => 'Ali Raza Sandhu — Meta Ads & Google Ads expert, performance marketer and social media manager. Based in Lahore, Punjab, Pakistan, working with brands across South Asia, the Gulf and Europe.',
                 'copyright' => '© :year Raza Sandhu. All rights reserved.',
             ],
         ],

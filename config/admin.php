@@ -59,7 +59,7 @@ $seo = fn (string $page) => [
     'icon' => 'search',
     'description' => 'What Google and link previews show for this page. Leave blank to use the defaults.',
     'fields' => [
-        ['name' => 'title', 'type' => 'text', 'label' => 'Page title', 'help' => '"· Raza Sandhu" is added automatically.'],
+        ['name' => 'title', 'type' => 'text', 'label' => 'Page title', 'help' => '"· Raza Sandhu" is added automatically, unless the title already includes the name.'],
         ['name' => 'description', 'type' => 'textarea', 'label' => 'Meta description', 'rows' => 3, 'help' => 'About 150 characters works best.'],
     ],
 ];

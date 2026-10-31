@@ -1,5 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /admin
 
-# Add your live domain once deployed, e.g.:
-# Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://razasandhu.wasmer.app/sitemap.xml

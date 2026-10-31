@@ -29,7 +29,7 @@
                             <span class="orbit-ring orbit-ring--a" aria-hidden="true"><i></i></span>
                             <span class="orbit-ring orbit-ring--b" aria-hidden="true"><i></i></span>
                             <figure class="portrait portrait--tall">
-                                <img src="{{ asset($profile['photo']) }}" alt="Portrait of {{ $profile['name'] }}" width="400" height="400" decoding="async">
+                                <img src="{{ asset($profile['photo']) }}" alt="Portrait of {{ $profile['name'] }}, Meta Ads &amp; Google Ads expert and performance marketer" width="400" height="400" decoding="async">
                             </figure>
                             <div class="portrait__badge portrait__badge--name"><strong>{{ $profile['name'] }}</strong><span>{{ $profile['short_title'] }}</span></div>
                         </div>

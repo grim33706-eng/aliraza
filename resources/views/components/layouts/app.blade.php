@@ -5,7 +5,13 @@
 ])
 @php
     $profile = config('portfolio.profile');
-    $fullTitle = $title ? $title.' · '.$profile['name'] : $profile['name'].' — '.$profile['title'];
+    // Titles that already name him (e.g. "About Ali Raza Sandhu") don't get the name twice.
+    $fullTitle = match (true) {
+        ! $title => $profile['name'].' — '.$profile['title'],
+        str_contains($title, $profile['name']) => $title,
+        default => $title.' · '.$profile['name'],
+    };
+    $seo = config('portfolio.seo');
     // Curtain label matches the navigation wording for each page.
     $curtainLabel = ['home' => 'Home', 'about' => 'About', 'services' => 'Services', 'portfolio' => 'Portfolio', 'results' => 'Results', 'international' => 'International', 'contact' => 'Contact'][request()->route()?->getName()] ?? $title ?? 'Home';
 @endphp
@@ -32,8 +38,11 @@
 
     <title>{{ $fullTitle }}</title>
     <meta name="description" content="{{ $description }}">
+    <meta name="keywords" content="{{ implode(', ', $seo['keywords']) }}">
     <meta name="author" content="{{ $profile['name'] }}">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="sitemap" type="application/xml" href="{{ route('sitemap') }}">
     <meta name="theme-color" content="#08090f">
     <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
 
@@ -45,7 +54,12 @@
     <meta property="og:image" content="{{ asset('images/og-image.jpg') }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ $profile['name'] }} — {{ implode(', ', array_slice($seo['job_titles'], 0, 3)) }}">
+    <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $fullTitle }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:image" content="{{ asset('images/og-image.jpg') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

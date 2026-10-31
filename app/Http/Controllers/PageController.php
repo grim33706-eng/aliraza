@@ -25,20 +25,46 @@ class PageController extends Controller
     {
         $profile = config('portfolio.profile');
         $contact = config('portfolio.contact');
+        $seo = config('portfolio.seo');
+        $person = route('home').'#person';
 
         return [
             '@context' => 'https://schema.org',
-            '@type' => 'Person',
-            'name' => $profile['name'],
-            'jobTitle' => $profile['title'],
-            'email' => 'mailto:'.$contact['email'],
-            'telephone' => $contact['phone_e164'],
-            'image' => asset($profile['photo']),
-            'url' => route('home'),
-            'address' => ['@type' => 'PostalAddress', 'addressLocality' => $profile['location']],
-            'alumniOf' => ['@type' => 'CollegeOrUniversity', 'name' => config('portfolio.education.institution')],
-            'knowsAbout' => config('portfolio.tools'),
-            'sameAs' => collect(config('portfolio.social'))->pluck('url')->all(),
+            '@graph' => [
+                [
+                    '@type' => 'Person',
+                    '@id' => $person,
+                    'name' => $profile['name'],
+                    'alternateName' => $seo['alternate_names'],
+                    'jobTitle' => array_values(array_unique([...$seo['job_titles'], $profile['title']])),
+                    'description' => $profile['summary'],
+                    'email' => 'mailto:'.$contact['email'],
+                    'telephone' => $contact['phone_e164'],
+                    'image' => asset($profile['photo']),
+                    'url' => route('home'),
+                    'address' => ['@type' => 'PostalAddress', 'addressLocality' => $profile['location']],
+                    'alumniOf' => ['@type' => 'CollegeOrUniversity', 'name' => config('portfolio.education.institution')],
+                    'knowsAbout' => [...config('portfolio.tools'), 'Performance Marketing', 'Facebook Ads', 'Instagram Ads', 'PPC Advertising', 'Lead Generation'],
+                    'sameAs' => collect(config('portfolio.social'))->pluck('url')->all(),
+                ],
+                [
+                    '@type' => 'ProfessionalService',
+                    'name' => $profile['name'].' — Meta Ads & Google Ads Expert',
+                    'url' => route('home'),
+                    'image' => asset('images/og-image.jpg'),
+                    'founder' => ['@id' => $person],
+                    'address' => ['@type' => 'PostalAddress', 'addressLocality' => $profile['location']],
+                    'areaServed' => $this->markets()->pluck('name')->all(),
+                    'knowsAbout' => ['Meta Ads', 'Google Ads', 'TikTok Ads', 'Performance Marketing', 'Social Media Management'],
+                ],
+                [
+                    '@type' => 'WebSite',
+                    'name' => $profile['name'],
+                    'alternateName' => $seo['alternate_names'][0],
+                    'url' => route('home'),
+                    'author' => ['@id' => $person],
+                ],
+            ],
         ];
     }
 
