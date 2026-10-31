@@ -3,10 +3,6 @@
         <a href="{{ route('admin.pages.edit', 'home') }}" class="ad-btn ad-btn--primary"><x-icon name="pencil" :size="16" /> Edit the Home page</a>
     </x-slot:actions>
 
-    @unless ($storageLinked)
-        <div class="ad-alert ad-alert--warning mb-4"><x-icon name="alert" :size="18" /> Uploaded images won't show yet: run <code>php artisan storage:link</code> on the server once.</div>
-    @endunless
-
     {{-- ============ STATS ============ --}}
     <div class="ad-stats">
         <a href="{{ route('admin.messages.index') }}" class="ad-stat">

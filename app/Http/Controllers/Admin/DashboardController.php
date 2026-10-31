@@ -30,7 +30,6 @@ class DashboardController extends Controller
                 'slug' => $slug,
                 'edited' => collect($page['sections'])->filter(fn ($s) => isset($edited[$s['key']]))->count(),
             ]),
-            'storageLinked' => is_dir(public_path('storage')),
         ]);
     }
 

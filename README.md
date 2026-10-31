@@ -10,7 +10,7 @@ npm install
 cp .env.example .env && php artisan key:generate
 touch database/database.sqlite   # SQLite needs extension=pdo_sqlite in php.ini
 php artisan migrate --seed       # creates the tables and the admin account (prints its password)
-php artisan storage:link         # makes uploaded images public
+php artisan storage:link         # optional: lets the web server serve uploads directly (Laravel serves them otherwise)
 npm run build                    # or: npm run dev (hot reload)
 php artisan serve
 ```
