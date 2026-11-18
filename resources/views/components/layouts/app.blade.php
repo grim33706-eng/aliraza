@@ -5,7 +5,7 @@
 ])
 @php
     $profile = config('portfolio.profile');
-    // Titles that already name him (e.g. "About Ali Raza Sandhu") don't get the name twice.
+    // Titles that already name him (e.g. "About Raza Sandhu") don't get the name twice.
     $fullTitle = match (true) {
         ! $title => $profile['name'].' — '.$profile['title'],
         str_contains($title, $profile['name']) => $title,
